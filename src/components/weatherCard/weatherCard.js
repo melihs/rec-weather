@@ -1,13 +1,14 @@
 import React from 'react';
+import './weatherCard.scss';
 
 export default function weatherCard() {
   return (
-    <div className="result">
+    <div className="card">
       <h2>Date</h2>
       <ul>
         <li><img src="" alt="" /></li>
         <li>weather status</li>
-        <li>weather C / maxtemp</li>
+        <li>mintemp C / maxtemp C</li>
       </ul>
     </div>
   )

@@ -1,4 +1,5 @@
 import React from "react";
+import WeatherCard from "./components/weatherCard/weatherCard";
 import "./App.scss";
 
 export default function App() {
