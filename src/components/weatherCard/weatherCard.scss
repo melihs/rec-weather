@@ -1,16 +1,17 @@
 .card {
   display: flex;
   min-height: 10vh;
-  width: 80%;
+  width: 85%;
   margin: auto;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(0,0,0,0.2);
 
   ul {
-    width: 50%;
+    width: 40%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   h2 {

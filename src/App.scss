@@ -1,13 +1,23 @@
-.search {
-  min-height: 10vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-bottom: 1px solid rgba(0,0,0,0.2);
-}
-
-input, button {
-  padding: 0.5rem, 1rem;
-  margin-left: 10px;
-  font-size: 1rem;
+.app {
+  .search {
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+  }
+  
+  input, button {
+    padding: 0.5rem, 1rem;
+    margin-left: 10px;
+    font-size: 1rem;
+  }
+  
+  h2 {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 7%;
+    margin-top: 10px;
+  }
 }
