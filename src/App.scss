@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+.search {
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+input, button {
+  padding: 0.5rem, 1rem;
+  margin-left: 10px;
+  font-size: 1rem;
+}
