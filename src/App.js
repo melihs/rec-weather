@@ -1,44 +1,43 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import WeatherCard from "./components/weatherCard/weatherCard";
+import Search from "./components/Search";
 import "./App.scss";
 
 export default function App() {
-  const [weatherData, setWeatherData] = useState([]);
-  const [location, setLocation] = useState("");
-  const APP_KEY = "208f47d80e0542f9a47152149211212";
-  let inputValue = "";
+    const [weatherData, setWeatherData] = useState([]);
+    const [location, setLocation] = useState("");
+    const APP_KEY = "208f47d80e0542f9a47152149211212";
+    let API_URL = '';
+    let cityName = "";
 
-  const getData = async (value) => {
-    document.querySelector("input").addEventListener("input", (e) => {
-      inputValue = e.target.value;
-    });
-    if (inputValue) {
-      try {
-        const data = await fetch(
-          `http://api.weatherapi.com/v1/forecast.json?key=${APP_KEY}&q=${value}&days=3&aqi=yes&alerts=yes`
-        );
-        const result = await data.json();
-        setWeatherData(result.forecast.forecastday);
-        setLocation(result.location);
-      } catch (e) {
-        console.log(e);
-      }
-    }
-  };
+    const weather = async () => {
+        document.querySelector("input").addEventListener("input", (e) => {
+            cityName = e.target.value;
+        });
 
-  return (
-    <div className="app">
-      <div className="search">
-        <input
-          type="text"
-          placeholder="Search a city..."
-          onChange={() => getData(inputValue)}
-        />
-      </div>
-      <h2>{location ? location.name : ""}</h2>
-      {weatherData.map((item, key) => (
-        <WeatherCard location={location} data={item} key={key} />
-      ))}
-    </div>
-  );
+        try {
+            if (cityName) API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${APP_KEY}&q=${cityName}&days=3&aqi=yes&alerts=yes`;
+            const data = await fetch(API_URL);
+            const response = await data.json();
+
+            if (!response.forecast || !cityName) {
+                setWeatherData([]);
+                setLocation("");
+                return;
+            }
+            setWeatherData(response.forecast.forecastday);
+            setLocation(response.location);
+        } catch (e) {
+        }
+    };
+
+    return (
+        <div className="app">
+            <h1 className="text-center text-3xl">Weather App</h1>
+            <Search weather={weather}/>
+            {weatherData.map((item, key) => (
+                <WeatherCard data={item} key={key}/>
+            ))}
+        </div>
+    );
 }
