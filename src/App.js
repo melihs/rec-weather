@@ -16,7 +16,7 @@ export default function App() {
         });
 
         try {
-            if (cityName) API_URL = `http://api.weatherapi.com/v1/forecast.json?key=${APP_KEY}&q=${cityName}&days=3&aqi=yes&alerts=yes`;
+            if (cityName) API_URL = `https://api.weatherapi.com/v1/forecast.json?key=${APP_KEY}&q=${cityName}&days=3&aqi=yes&alerts=yes`;
             const data = await fetch(API_URL);
             const response = await data.json();
 
