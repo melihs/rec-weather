@@ -22,3 +22,6 @@ $ yarn start
 * tailwindcss https://github.com/tailwindlabs/tailwindcss
 * react-icons https://github.com/react-icons/react-icons
 * sass https://sass-lang.com
+
+### TODO
+- multi-language support
