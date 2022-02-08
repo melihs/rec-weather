@@ -21,7 +21,8 @@ $ yarn start
 ### Built With
 * tailwindcss https://github.com/tailwindlabs/tailwindcss
 * react-icons https://github.com/react-icons/react-icons
-* sass https://sass-lang.com
+* sass        https://sass-lang.com
+* dotenv      https://github.com/motdotla/dotenv
 
 ### TODO
 - multi-language support
